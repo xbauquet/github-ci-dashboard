@@ -1,0 +1,12 @@
+<header class="w3-display-container">
+  <div class="w3-display-left">
+    <img src="../../assets/logo.png" alt="Logo representing a guinea-pig">
+    <span id="title">Ginny CI</span>
+  </div>
+
+  <button *ngIf="!isConnected()" (click)="login()" class="w3-button w3-black w3-round-large w3-display-right">
+    <img src="../../assets/GitHub-Mark-Light-24px.png" alt="Github logo">
+    Login with Github
+  </button>
+  <button *ngIf="isConnected()" (click)="logout()" class="w3-button w3-display-right">Logout</button>
+</header>

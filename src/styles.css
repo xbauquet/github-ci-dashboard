@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --green: #61c30b;
+}
+
+header {
+  height: 65px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#title {
+  font-size: 1.5em;
+  margin-left: 20px;
+}
