@@ -1,1 +1,4 @@
 <app-header></app-header>
+<div *ngIf="authService.token">
+  <h1>Successfully got a token</h1>
+</div>
