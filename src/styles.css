@@ -32,9 +32,33 @@ footer a {
   text-decoration: none;
 }
 
+h1 {
+  color: var(--red);
+}
+
+#welcome {
+  padding: 2% 10%;
+}
+
+#welcome-screenshot {
+  max-width: 80%;
+  border: 2px solid var(--light-grey);
+}
+
 #title {
   font-size: 1.5em;
   margin-left: 20px;
+  color: var(--grey);
+}
+
+.login-button {
+  font-size: 0.8em;
+}
+
+.login-button img {
+  height: 18px;
+  width: 18px;
+  margin-right: 5px;
 }
 
 .main_progress .mat-progress-bar-fill::after {

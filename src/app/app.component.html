@@ -1,3 +1,4 @@
 <app-header></app-header>
+<app-welcome *ngIf="!authService.token"></app-welcome>
 <app-ci *ngIf="authService.token"></app-ci>
 <app-footer></app-footer>

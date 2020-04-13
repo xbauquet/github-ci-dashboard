@@ -11,6 +11,7 @@ import { GithubService } from './services/github.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FooterComponent } from './footer/footer.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent}
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     CIComponent,
-    FooterComponent
+    FooterComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
