@@ -10,3 +10,5 @@
   </button>
   <button *ngIf="authService.token" (click)="logout()" class="w3-button w3-display-right">Logout</button>
 </header>
+<mat-progress-bar *ngIf="!githubService.isWatching" class="main_progress" [value]="100"></mat-progress-bar>
+<mat-progress-bar *ngIf="githubService.isWatching" class="main_progress" [mode]="'indeterminate'"></mat-progress-bar>

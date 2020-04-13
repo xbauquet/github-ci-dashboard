@@ -1,6 +1,12 @@
 :root {
   --green: #61c30b;
+  --red: #d75452;
+  --grey: #808fa2;
+  --orange:#ea943e;
+  --blue:#1792f6;
 }
+
+html, body { height: 100%; }
 
 header {
   height: 65px;
@@ -12,3 +18,94 @@ header {
   font-size: 1.5em;
   margin-left: 20px;
 }
+
+.main_progress .mat-progress-bar-fill::after {
+  background-color: var(--green);
+}
+
+.row {
+  height: 100px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.material-icons.md-lock {
+  font-size: 15px;
+  color: var(--red);
+}
+
+.sha {
+  color: var(--grey);
+  font-size: 0.7em;
+}
+
+.waiting .mat-progress-bar-fill::after {
+  background-color: #e2e2e2;
+}
+
+.success {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.success .mat-progress-bar-fill::after {
+  background-color: var(--green);
+}
+
+.failure {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.failure .mat-progress-bar-fill::after {
+  background-color: var(--red);
+}
+
+.neutral {
+  border-color: var(--grey);
+  color: var(--grey);
+}
+
+.neutral .mat-progress-bar-fill::after {
+  background-color: var(--grey);
+}
+
+.cancelled {
+  border-color: var(--grey);
+  color: var(--grey);
+}
+
+.cancelled .mat-progress-bar-fill::after {
+  background-color: var(--grey);
+}
+
+.timed_out {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.timed_out .mat-progress-bar-fill::after {
+  background-color: var(--red);
+}
+
+.action_required {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.action_required .mat-progress-bar-fill::after {
+  background-color: var(--orange);
+}
+
+.in_progress {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.in_progress .mat-progress-bar-fill::after {
+  background-color: var(--blue);
+}
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import {GithubService} from '../services/github.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService,
+              public githubService: GithubService) { }
 
   ngOnInit(): void {
   }

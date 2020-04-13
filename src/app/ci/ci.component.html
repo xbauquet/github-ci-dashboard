@@ -1,1 +1,27 @@
-<h1>CI component</h1>
+<section class="w3-row">
+  <div class="w3-quarter w3-container">
+    <!-- empty -->
+  </div>
+  <div class="w3-half w3-container">
+    <div class="w3-display-container row" *ngFor="let repo of githubService.repositories">
+      <div class="w3-display-left">
+        <div>
+          <a class="no-decoration" href="{{ repo.htmlUrl }}" target="_blank">{{ repo.owner }}/{{ repo.name }}</a>
+          <i class="material-icons md-lock" *ngIf="repo.private">lock</i>
+        </div>
+        <div class="sha">{{ repo.checkRun.head_sha }}</div>
+      </div>
+
+      <div class="w3-display-right">
+        <div class="{{ repo.checkRun.state }}">
+          {{ repo.checkRun.state }}
+          <mat-progress-bar *ngIf="repo.checkRun.state != 'in_progress'" [value]="100"></mat-progress-bar>
+          <mat-progress-bar *ngIf="repo.checkRun.state == 'in_progress'" [mode]="'indeterminate'"></mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-quarter w3-container">
+    <!-- empty -->
+  </div>
+</section>

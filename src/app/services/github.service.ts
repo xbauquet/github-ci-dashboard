@@ -19,6 +19,7 @@ export class GithubService {
   user: User;
   organisations: Organisation[];
   repositories: Repository[];
+  isWatching = false;
 
   private static getBody(after: string, user: string, orgs: Organisation[]) {
     after = after ? '"' + after + '"' : 'null';
@@ -61,7 +62,27 @@ export class GithubService {
     this.repositories = await this.getRepositories();
   }
 
-  requestUpdates(owner: string, repo: string) {
+  watchRepositories() {
+    this.isWatching = true;
+    for (const repo of this.repositories) {
+      repo.subscription = this.requestUpdates(repo.owner, repo.name).subscribe(
+        value => {
+          value.state = value.status === 'in_progress' ? 'in_progress' : value.conclusion;
+          repo.checkRun = value;
+        }
+      );
+    }
+  }
+
+  unwatchRepositories() {
+    this.isWatching = false;
+    for (const repo of this.repositories) {
+      repo.subscription.unsubscribe();
+      repo.subscription = null;
+    }
+  }
+
+  private requestUpdates(owner: string, repo: string) {
     return interval(10000).pipe(_ => this.getCheckRun(owner, repo));
   }
 

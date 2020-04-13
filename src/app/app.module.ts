@@ -7,7 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import { CIComponent } from './ci/ci.component';
-import {GithubService} from './services/github.service';
+import { GithubService } from './services/github.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent}
@@ -22,7 +24,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [
     AuthService,
