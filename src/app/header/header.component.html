@@ -4,8 +4,8 @@
     <span id="title">Ginny CI</span>
   </div>
 
-  <button *ngIf="!authService.token" (click)="login()" class="w3-button w3-black w3-round-large w3-display-right login-button">
-    <img src="../../assets/GitHub-Mark-Light-24px.png" alt="Github logo">
+  <button *ngIf="!authService.token" (click)="login()" class="w3-button w3-display-right login-button">
+    <img src="../../assets/GitHub-Mark-64px.png" alt="Github logo">
     Login with Github
   </button>
   <button *ngIf="authService.token" (click)="logout()" class="w3-button w3-display-right">Logout</button>
