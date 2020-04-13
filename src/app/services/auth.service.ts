@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Router} from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +45,7 @@ export class AuthService {
     }
     const url = 'https://github.com/login/oauth/authorize?' +
       'client_id=' + this.CLIENT_ID + '&' +
-      'scope=repos%20read:org%20read:user%20read:packages%20workflow&' +
+      'scope=repo%20read:org%20read:user%20read:packages%20workflow&' +
       'state=' + this.getState();
     document.location.replace(url);
   }
@@ -59,7 +59,7 @@ export class AuthService {
         value => {
           this.setToken(value.access_token);
           localStorage.removeItem(this.STATE_KEY);
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/').then();
         }
       );
     } else {
@@ -74,6 +74,5 @@ export class AuthService {
 }
 
 export class Token {
-  // tslint:disable-next-line:variable-name
   access_token: string;
 }

@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { RouterModule, Routes } from '@angular/router';
+import { CIComponent } from './ci/ci.component';
+import {GithubService} from './services/github.service';
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent}
@@ -14,7 +16,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    CIComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    AuthService
+    AuthService,
+    GithubService
   ],
   bootstrap: [AppComponent]
 })
