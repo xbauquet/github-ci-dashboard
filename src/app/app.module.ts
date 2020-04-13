@@ -10,6 +10,7 @@ import { CIComponent } from './ci/ci.component';
 import { GithubService } from './services/github.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent}
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    CIComponent
+    CIComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
